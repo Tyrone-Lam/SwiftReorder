@@ -22,9 +22,9 @@
 
 import UIKit
 
-extension ReorderController {
+public extension ReorderController {
 
-    @objc internal func handleReorderGesture(_ gestureRecognizer: UIGestureRecognizer) {
+    @objc func handleReorderGesture(_ gestureRecognizer: UIGestureRecognizer) {
         guard let superview = tableView?.superview else { return }
         
         let touchPosition = gestureRecognizer.location(in: superview)
