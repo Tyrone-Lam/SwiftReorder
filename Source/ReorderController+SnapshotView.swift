@@ -28,7 +28,8 @@ extension ReorderController {
         guard let tableView = tableView, let superview = tableView.superview else { return }
         
         removeSnapshotView()
-        tableView.reloadRows(at: [indexPath], with: .none)
+        // cell 自适应高度时，有概率导致 cell.frame.height 错误
+//        tableView.reloadRows(at: [indexPath], with: .none)
         
         guard let cell = tableView.cellForRow(at: indexPath) else { return }
         let cellFrame = tableView.convert(cell.frame, to: superview)
